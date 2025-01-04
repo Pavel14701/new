@@ -1,0 +1,17 @@
+D:\new\obj\x64\Debug\net8.0\New.csproj.AssemblyReference.cache
+D:\new\obj\x64\Debug\net8.0\New.GeneratedMSBuildEditorConfig.editorconfig
+D:\new\obj\x64\Debug\net8.0\New.AssemblyInfoInputs.cache
+D:\new\obj\x64\Debug\net8.0\New.AssemblyInfo.cs
+D:\new\obj\x64\Debug\net8.0\New.csproj.CoreCompileInputs.cache
+D:\new\bin\x64\Debug\net8.0\New.exe
+D:\new\bin\x64\Debug\net8.0\New.deps.json
+D:\new\bin\x64\Debug\net8.0\New.runtimeconfig.json
+D:\new\bin\x64\Debug\net8.0\New.dll
+D:\new\bin\x64\Debug\net8.0\New.pdb
+D:\new\bin\x64\Debug\net8.0\Autofac.dll
+D:\new\obj\x64\Debug\net8.0\New.csproj.Up2Date
+D:\new\obj\x64\Debug\net8.0\New.dll
+D:\new\obj\x64\Debug\net8.0\refint\New.dll
+D:\new\obj\x64\Debug\net8.0\New.pdb
+D:\new\obj\x64\Debug\net8.0\New.genruntimeconfig.cache
+D:\new\obj\x64\Debug\net8.0\ref\New.dll
