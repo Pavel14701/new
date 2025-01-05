@@ -1,12 +1,15 @@
-public interface IService
+namespace SalesApp
 {
-    void DoSomething();
-}
-
-public class Service : IService
-{
-    public void DoSomething()
+    public interface IService
     {
-        Console.WriteLine("Выполнение работы");
+        void DoSomething();
+    }
+
+    public class Service : IService
+    {
+        public void DoSomething()
+        {
+            Console.WriteLine("Выполнение работы");
+        }
     }
 }

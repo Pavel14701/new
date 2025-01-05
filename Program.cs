@@ -1,25 +1,35 @@
 ﻿using Autofac;
 using System;
+using System.Threading.Tasks;
 
-public class Program
+namespace SalesApp
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        // Создание контейнера Autofac
-        var builder = new ContainerBuilder();
-
-        // Регистрация зависимостей
-        builder.RegisterType<Service>().As<IService>().SingleInstance();
-        builder.RegisterType<Client>().InstancePerDependency();
-
-        // Создание Autofac контейнера
-        var container = builder.Build();
-
-        // Разрешение зависимости и использование клиента
-        using (var scope = container.BeginLifetimeScope())
+        public static async Task Main(string[] args)
         {
-            var client = scope.Resolve<Client>();
-            client.PerformAction();
+            // Создание контейнера Autofac
+            var builder = new ContainerBuilder();
+
+            // Регистрация зависимостей
+            builder.RegisterType<Service>().As<IService>().SingleInstance();
+            builder.RegisterType<Logger>().As<ILogger>().SingleInstance();
+            builder.RegisterType<Notifier>().As<INotifier>().SingleInstance();
+            builder.RegisterType<SalesDbContext>().AsSelf().InstancePerLifetimeScope();
+            builder.RegisterType<DatabaseService>().As<IDatabaseService>().InstancePerLifetimeScope();
+            builder.RegisterType<EmailService>().As<IEmailService>().SingleInstance();
+            builder.RegisterType<ExternalService>().As<IExternalService>().SingleInstance();
+            builder.RegisterType<Client>().InstancePerDependency();
+
+            // Создание Autofac контейнера
+            var container = builder.Build();
+
+            // Разрешение зависимости и использование клиента
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var client = scope.Resolve<Client>();
+                await client.PerformActionAsync();
+            }
         }
     }
 }
